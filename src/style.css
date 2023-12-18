@@ -5,34 +5,45 @@
   text-decoration: none;
   border: none;
   outline: none;
-}
-html {
-  height: 100%;
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  text-rendering: geometricPrecision;
 }
 
 body {
-  min-height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  min-height: 100vh;
+  background-color: #1c1c1c;
   font-size: 20px;
   color: white;
 }
-
 .container {
-  margin: 20px 20px 0;
+  height: 100vh;
 }
-
 .menu {
   display: flex;
-  height: 60px;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+  padding: 1em;
+  & p {
+    font-size: 16px;
+  }
+
+  & button {
+    background-color: rgb(0, 141, 87);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .menu p,
 .menu input,
 .menu button {
-  margin-right: 16px;
-  height: 40px;
+  border-radius: 0.4em;
 }
 
 .menu p {
@@ -42,16 +53,21 @@ body {
 }
 
 .menu input {
-  padding-left: 8px;
+  padding: 8px;
+  height: 40px;
 }
 
 .menu button {
-  padding: 0 12px;
+  padding: 1em;
+  height: 40px;
 }
 
 .card-container {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
   gap: 20px;
 }
 
@@ -94,18 +110,15 @@ body {
 }
 
 h2 {
-  margin: 12px 0;
-}
-
-.order-iterations {
-  font-size: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-left: 1em;
+  text-align: left;
 }
 
 .order-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 20px;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5em 1.5em;
+  height: 100%;
 }
