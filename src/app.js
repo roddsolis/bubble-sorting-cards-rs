@@ -91,7 +91,7 @@ const showCards = (array, container) => {
   cardContainer.innerHTML = cardHTML;
 };
 
-// ----- ORDER CARTS ---------
+// ----- ORDER CARDS ---------
 
 const orderCards = () => {
   cardHTML = "";
@@ -102,7 +102,7 @@ const orderCards = () => {
     for (let i = wall + 1; i < array.length; i++) {
       const left = array[wall];
       const right = array[i];
-      if (left.number > right.number) {
+      if (getNumericValue(left.number) > getNumericValue(right.number)) {
         array[wall] = right;
         array[i] = left;
       }
@@ -110,6 +110,15 @@ const orderCards = () => {
     cardHTML += `<p class="order-iterations">${wall + 1}</p>`;
     showCards(array, "order-container"); // SHOW ORDER CARDS
     wall++;
+  }
+};
+
+// Function to get the numeric value of a card
+const getNumericValue = value => {
+  if (typeof value === "number") {
+    return value;
+  } else {
+    return letters[value] || parseInt(value);
   }
 };
 
